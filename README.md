@@ -10,6 +10,6 @@ In the project directory, you can run:
 ### `yarn start` or `npm start`
 Please make sure you have installed node and npm
 
-https://img.shields.io/github/issues/kalapyha/stocks
+[![GitHub issues](https://img.shields.io/github/issues/kalapyha/stocks?style=flat-square)](https://github.com/kalapyha/stocks/issues)
 
 
