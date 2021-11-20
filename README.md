@@ -1,4 +1,4 @@
-# Stocks APP to treck current market
+# Stocks APP to track current market
 
 Links and description will be added here 
 
