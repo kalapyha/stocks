@@ -7,9 +7,8 @@ import {
   Typography,
   Avatar,
   Grid,
-  Menu,
-  IconButton,
 } from "@mui/material";
+import LiveRanges from './LiveRanges/LiveRanges'
 import { makeStyles } from "@mui/styles";
 import logo from "../../images/logo.png";
 
@@ -69,7 +68,7 @@ export default function Header() {
             <Grid
               container
               xs={12}
-              md={4}
+              md={3}
               alignItems="center"
               justifyContent="center"
             >
@@ -83,15 +82,8 @@ export default function Header() {
                 Crypto & Metals
               </Typography>
             </Grid>
-            <Box
-              component={Grid}
-              item
-              display={{ xs: "block", lg: "block" }}
-              className={classes.divider}
-            >
-              |
+              <LiveRanges />
               {/* TODO add live prices here <------ ex Gold: +1.5 USD per ounce  */}
-            </Box>
             <Grid
               xs={12}
               md={7}
@@ -101,7 +93,6 @@ export default function Header() {
               className={classes.navs}
             >
               {navLinks.map(({ to, link }) => {
-                console.log(link, location.pathname);
                 return (
                   <div key={link}>
                     <NavLink
@@ -116,11 +107,6 @@ export default function Header() {
                 );
               })}
             </Grid>
-            {/* <Box component={Grid} item>
-              <IconButton>
-                <Menu color="secondary" />
-              </IconButton>
-            </Box> */}
           </Grid>
         </Toolbar>
       </AppBar>
