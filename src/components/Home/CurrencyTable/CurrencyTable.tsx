@@ -30,13 +30,12 @@ const rows = [
 
 
 const CurrencyTable = (): JSX.Element => {
-const theme = useTheme()
-const useStyles = makeStyles({
-    header: {
-        marginTop: theme.spacing(3),
-        marginBottom: theme.spacing(3),
-    },
-})
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        header: {
+            margin: `${theme.spacing(3)} !important`,
+        },
+    })
 const classes = useStyles()
 
   return (
