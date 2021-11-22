@@ -1,12 +1,10 @@
-import React from "react";
 import Marquee from "react-double-marquee";
 import { Grid } from "@mui/material";
-import { useGetGoldenQuery, useGetSilverQuery } from "../../../services/metalsApi";
+import { useGetGoldenQuery } from "../../../services/metalsApi";
 import { getMetalDataString } from "../../../utils/utils";
 
 const LiveRanges = () => {
   const { data: goldData, isFetching: goldFetching } = useGetGoldenQuery();
-  const { data: silverdData, isFetching: silverFetching } = useGetSilverQuery();
 
   return (
     <Grid
@@ -21,12 +19,9 @@ const LiveRanges = () => {
         color: "grey",
       }}
     >
-      {!goldFetching && !silverFetching && (
+      {!goldFetching && (
         <Marquee direction="left">
-          {`${getMetalDataString(
-            "GOLD",
-            goldData[0]
-          )} | ${getMetalDataString("SILVER", silverdData[0])}`}
+          {`${getMetalDataString("GOLD", goldData[0])}`}
         </Marquee>
       )}
     </Grid>
