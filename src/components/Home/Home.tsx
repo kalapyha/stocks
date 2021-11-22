@@ -1,10 +1,11 @@
 import React from 'react'
+import Stats from './Stats/Stats'
 
 const Home = () => {
     return (
-        <div>
-            Home
-        </div>
+        <>
+        <Stats/>
+        </>
     )
 }
 

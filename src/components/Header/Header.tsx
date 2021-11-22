@@ -58,7 +58,7 @@ const navLinks: MenuLink[] = [
 
 export default function Header() {
   const classes = useStyles();
-  let location = useLocation();
+  const location = useLocation();
 
   return (
     <Box sx={{ flexGrow: 1 }}>

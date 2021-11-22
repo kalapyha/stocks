@@ -5,7 +5,6 @@ import { useGetGoldenQuery, useGetSilverQuery } from "../../../services/metalsAp
 import { getMetalDataString } from "../../../utils/utils";
 
 const LiveRanges = () => {
-  // @ts-ignore: Unreachable code error
   const { data: goldData, isFetching: goldFetching } = useGetGoldenQuery();
   const { data: silverdData, isFetching: silverFetching } = useGetSilverQuery();
 
