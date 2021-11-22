@@ -1,23 +1,6 @@
 import { Typography, Paper, Divider, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles({
-  paperCard: {
-    padding: "1.5rem",
-    marginTop: "1.5rem"
-  },
-  paperHeader: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  headerText: {
-    paddingLeft: "5px",
-  },
-  paperDivider: {
-    paddingTop: "10px",
-  },
-});
+import { useTheme } from "@mui/material";
 
 interface InfoCardProps {
   header: string;
@@ -26,10 +9,30 @@ interface InfoCardProps {
 }
 
 const InfoCard = (props: InfoCardProps): JSX.Element => {
+  const theme = useTheme();
+
+  const useStyles = makeStyles({
+    paperCard: {
+      padding: theme.spacing(3),
+      marginTop: theme.spacing(3),
+    },
+    paperHeader: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    headerText: {
+      paddingLeft: theme.spacing(0.5),
+    },
+    paperDivider: {
+      paddingTop: theme.spacing(2),
+    },
+  });
+
   const classes = useStyles();
 
   return (
-    <Grid item spacing={2}>
+    <Grid item xs={11} sm={11} md={2} lg={2} xl={2}>
       <Paper square elevation={3} className={classes.paperCard}>
         <div className={classes.paperHeader}>
           {props.icon}

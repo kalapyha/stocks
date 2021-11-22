@@ -1,21 +1,22 @@
 import { useGetCryptoStatsQuery } from "../../../services/cryptoApi";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, CircularProgress } from "@mui/material";
+import {
+  BlurCircular,
+  BusinessCenter,
+  Business,
+  History,
+  AllInclusive,
+} from "@material-ui/icons";
+import InfoCard from "./InfoCard";
 import { useTheme } from "@mui/material";
-import BlurCircular from "@material-ui/icons/BlurCircular";
-import BusinessCenter from "@material-ui/icons/BusinessCenter";
-import Business from "@material-ui/icons/Business";
-import History from "@material-ui/icons/History";
-import AllInclusive from "@material-ui/icons/AllInclusive";
-import InfoCard from './InfoCard'
-import millify from "millify";
 import { makeStyles } from "@mui/styles";
+import millify from "millify";
 
-const Stats = () => {
+const Stats = (): JSX.Element => {
   // @ts-ignore:next-line
   const { data, isFetching } = useGetCryptoStatsQuery();
   const theme = useTheme();
-  
+
   const useStyles = makeStyles({
     statsWrapper: {
       marginTop: theme.spacing(1),
@@ -24,7 +25,7 @@ const Stats = () => {
       marginTop: theme.spacing(3),
     },
   });
-  
+
   const classes = useStyles();
   return isFetching ? (
     <Box className={classes.header}>
@@ -35,14 +36,13 @@ const Stats = () => {
   ) : (
     <>
       <Box className={classes.header}>
-        <Typography variant="h4" align="center">
+        <Typography variant="h4" align="left">
           World crypto data
         </Typography>
       </Box>
       <Grid
         container
         alignContent="center"
-        alignItems="center"
         justifyContent="space-around"
         className={classes.statsWrapper}
       >
@@ -76,11 +76,4 @@ const Stats = () => {
   );
 };
 
-// "data":{5 items
-// "totalCoins":12628
-// "totalMarkets":83138
-// "totalExchanges":373
-// "totalMarketCap":2701269379312.067
-// "total24hVolume":91937569991.03822
-// }
 export default Stats;

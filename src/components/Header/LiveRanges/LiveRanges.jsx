@@ -18,6 +18,7 @@ const LiveRanges = () => {
       style={{
         width: "90%",
         whiteSpace: "nowrap",
+        color: "grey",
       }}
     >
       {!goldFetching && !silverFetching && (
